@@ -1,0 +1,33 @@
+.TH 
+.SH NOM
+mythread_mutex_init \-\- Termine le thread et stocke la valeur de retour
+.SH SYNOPSYS
+#include <mythread.h>
+
+int
+mythread_mutex_init (mythread_mutex_t *mutex, const mythread_mutexattr_t *attr)
+
+.SH DESCRIPTION
+La fonction 
+.B mythread_mutex_init 
+initialise 
+.I mutex
+conformément aux attributs par défaut. Il est ensuite prêt à être utilisé.
+
+.SH VALEURS DE RETOUR
+Si l'initialisation se passe bien
+.B mythread_mutex_init
+renvoie 0. Sinon la fonction renvoie le code d'erreur.
+
+.SH ERREURS
+.B mythread_mutex_init
+va retourner les erreurs:
+.TP
+.B [EINVAL]
+.I le mutex passé en argument n'est pas valide
+.TP
+.B [ENOMEM]
+.I pas assez de mémoire pour initialiser le mutex
+
+.SH VOIR AUSSI
+.BR "mythread_mutex_destroy" "(3)," "mythread_join" "(3)" 

@@ -1,0 +1,49 @@
+.TH 
+.SH NOM
+mythread_cond_wait \-\- Bloque l'exécution du thread et attend la réalistation d'une condition
+.SH SYNOPSYS
+#include <mythread.h>
+
+int
+mythread_cond_wait (mythread_cond_t *cond, mythread_mutex_t *mutex)
+
+.SH DESCRIPTION
+La fonction 
+.B mythread_cond_wait
+est utilisée pour bloquer l'exécution du thread sur la variable de condition 
+.I cond
+. Elle est appelée avec 
+.I mutex
+vérouillé par le thread appelant. Dans le cas contraire, son comportement n'est pas défini.
+
+.B mythread_cond_wait dévérouille automatiquement le mutex 
+.I mutex 
+et bloque sur la condition 
+.I cond
+. Pour signaler que la condition est réalisée, utiliser la fonction 
+.B mythread_cond_signal
+. Au retour de la fonction, 
+.I mutex
+est à nouveau vérouillé et est possédé par le thread appelant. 
+
+.SH VALEURS DE RETOUR
+Si il n'y a aucun problème, 
+.B mythread_cond_wait
+retourne 0. Dans le cas contraire, le numéro de l'erreur est retourné.
+
+.SH ERREURS
+.B mythread_cond_wait
+peut retourner les erreurs suivantes:
+.TP
+.B [EINVAL]
+.I Les variables
+.I cond 
+ou 
+.I mutex 
+n'ont pas été initialisées.
+.B [EPERM]
+.I Le mutex passé en argument n'est pas vérouillé ou le thread appelant n'en est pas propriétaire.
+
+
+.SH VOIR AUSSI
+.BR "mythread_cond_signal" "(3)," "mythread_cond_init" "(3)," "mythread_cond_destroy" "(3)" 

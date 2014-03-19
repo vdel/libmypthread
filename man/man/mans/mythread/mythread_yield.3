@@ -1,0 +1,24 @@
+.TH 
+.SH NOM
+mythread_yield \-\- Redonne la main au scheduler
+.SH SYNOPSYS
+#include <mythread.h>
+
+void
+mythread_yield (void)
+
+.SH DESCRIPTION 
+La fonction 
+.B mythread_self 
+retourne le descripteur de thread du thread appelant.
+
+.SH VALEURS DE RETOUR
+La fonction 
+.B mythread_yield 
+passe la main au scheduler. Le thread courant est remis en attente.
+
+.SH ERREURS
+Pas d'erreur possible.
+
+.SH VOIR AUSSI
+.BR "mythread_create" "(3)," "mythread_self" "(3)"

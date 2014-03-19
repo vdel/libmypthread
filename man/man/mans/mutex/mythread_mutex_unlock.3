@@ -1,0 +1,31 @@
+.TH 
+.SH NOM
+mythread_mutex_unlock \-\- Déverrouille un mutex
+.SH SYNOPSYS
+#include <mythread.h>
+
+int 
+mythread_mutex_unlock (mythread_mutex_t *mutex)
+
+.SH DESCRIPTION
+La fonction 
+.B mythread_mutex_lock 
+vérifie que le thread appelant possède le verrou et si oui, le déverrouille.
+
+.SH VALEURS DE RETOUR
+Si le déverrouillage
+.B mythread_mutex_unlock
+renvoie 0. Sinon la fonction renvoie le code d'erreur.
+
+.SH ERREURS
+.B mythread_mutex_unlock
+va retourner les erreurs:
+.TP
+.B [EINVAL]
+.I le mutex passé en argument n'est pas valide
+.TP
+.B [EPERM]
+.I Le thread courant n'a pas le droit de déverrouillé ou le mutex n'est pas verrouillé
+
+.SH VOIR AUSSI
+.BR "mythread_mutex_init" "(3)," "mythread_mutex_lock" "(3)" 

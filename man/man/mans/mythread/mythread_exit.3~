@@ -1,0 +1,26 @@
+.TH 
+.SH NOM
+mythread_exit \-\- Termine le thread et stocke la valeur de retour
+.SH SYNOPSYS
+#include <mythread.h>
+
+void 
+mythread_exit (void* value_ptr)
+
+.SH DESCRIPTION
+La fonction 
+.B mythread_exit 
+termine et libère le thread. Stocke la valeur de retour 
+.I value_ptr
+dans le cas d'un futur appel à 
+.B mythread_join
+.
+
+.SH VALEURS DE RETOUR
+Ne renvoie rien
+
+.SH ERREURS
+Pas d'erreur possible
+
+.SH VOIR AUSSI
+.BR "mythread_create" "(3)," "mythread_join" "(3)" 

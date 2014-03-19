@@ -1,0 +1,41 @@
+.TH 
+.SH NOM
+mythread_join \-\- Met en attente de la fin d'un thread
+.SH SYNOPSYS
+#include <mythread.h>
+
+int
+mythread_join (mythread_t thread, void **value_ptr)
+
+.SH DESCRIPTION
+La fonction 
+.B mythread_join 
+met le thread courant en attente de la terminaison de
+.I thread
+. Si plusieurs appels de 
+.B mythread_join
+sont effectués pour le même argument
+.I thread
+alors le résultat est indéterminé. Si 
+.B mythread_join
+s'exécute avec succès, le résultat passé à 
+.B mythread_exit
+est stocké à l'endroit pointé par 
+.I value_ptr
+.
+
+.SH VALEURS DE RETOUR
+Si il n'y a aucun problème, 
+.B mythread_join
+retourne 0. Dans le cas contraire, le numéro de l'erreur est retourné.
+
+.SH ERREURS
+.B mythread_create
+va retourner les erreurs:
+.TP
+.B   
+.I  
+
+
+.SH VOIR AUSSI
+.BR "mythread_create" "(3)," "mythread_exit" "(3)" 

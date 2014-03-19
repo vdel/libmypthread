@@ -1,0 +1,30 @@
+.TH 
+.SH NOM
+mythread_cond_init \-\- Termine le thread et stocke la valeur de retour
+.SH SYNOPSYS
+#include <mythread.h>
+
+int
+mythread_cond_init (mythread_cond_t *cond, const mythread_condattr_t *a)
+
+.SH DESCRIPTION
+La fonction 
+.B mythread_cond_init 
+initialise 
+.I cond
+conformément aux attributs par défaut.
+
+.SH VALEURS DE RETOUR
+Si l'initialisation se passe bien
+.B mythread_cond_init
+renvoie 0. Sinon la fonction renvoie le code d'erreur.
+
+.SH ERREURS
+.B mythread_cond_init
+va retourner les erreurs:
+.TP
+.B [ENOMEM]
+.I pas assez de mémoire pour initialiser la condition
+
+.SH VOIR AUSSI
+.BR "mythread_cond_destroy" "(3)" 

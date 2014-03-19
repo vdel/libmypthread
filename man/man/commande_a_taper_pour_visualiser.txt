@@ -1,0 +1,1 @@
+groff -t -e -mandoc -Tps mythread_create.3 > mythread_create.ps && evince mythread_create.ps

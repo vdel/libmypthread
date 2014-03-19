@@ -1,0 +1,37 @@
+.TH 
+.SH NOM
+mythread_cond_signal \-\- Signal qu'une condition est réalisée.
+.SH SYNOPSYS
+#include <mythread.h>
+
+int
+mythread_cond_signal (mythread_cond_t *cond) 
+
+.SH DESCRIPTION
+La fonction 
+.B mythread_cond_signal
+est utilisée pour débloquer un des threads bloqués sur la variable de condition 
+.I cond
+. L'ordre selon lequel les threads sont débloqués n'est pas défini.
+
+Elle n'a aucun effet si aucun thread n'est bloqué sur 
+.I cond
+.
+
+.SH VALEURS DE RETOUR
+Si il n'y a aucun problème, 
+.B mythread_cond_wait
+retourne 0. Dans le cas contraire, le numéro de l'erreur est retourné.
+
+.SH ERREURS
+.B mythread_cond_wait
+peut retourner les erreurs suivantes:
+.TP
+.B [EINVAL]
+.I La variable 
+.I cond 
+n'a pas été initialisée.
+
+
+.SH VOIR AUSSI
+.BR "mythread_cond_wait" "(3)," "mythread_cond_init" "(3)," "mythread_cond_destroy" "(3)" 

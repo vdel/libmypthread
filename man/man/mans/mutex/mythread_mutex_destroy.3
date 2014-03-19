@@ -1,0 +1,33 @@
+.TH 
+.SH NOM
+mythread_mutex_destroy \-\- Detruit un mutex
+.SH SYNOPSYS
+#include <mythread.h>
+
+int
+mythread_mutex_destroy (mythread_mutex_t *mutex)
+
+.SH DESCRIPTION
+La fonction 
+.B mythread_mutex_destroy 
+libère toute la mémoire utilisée par le descripteur 
+.I mutex
+.
+
+.SH VALEURS DE RETOUR
+Si tout se passe bien
+.B mythread_mutex_destroy
+renvoie 0. Sinon la fonction renvoie le code d'erreur.
+
+.SH ERREURS
+.B mythread_mutex_destroy
+va retourner les erreurs:
+.TP
+.B [EINVAL]
+.I le mutex passé en argument n'est pas valide
+.TP
+.B [EBUSY]
+.I le mutex à détruire est verrouillé
+
+.SH VOIR AUSSI
+.BR "mythread_mutex_init" "(3)," "mythread_mutex_lock" "(3)" 

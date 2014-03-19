@@ -1,0 +1,22 @@
+.TH MYTHREAD
+.SH NOM
+mythread \-\- Librairie de threads
+.SH SYNOPSYS
+#include <mythread.h>
+.SH DESCRIPTION
+La librairie 
+.B mythread 
+fournit un ensemble de fonctions permettant aux applications nécessitant l'utilisation de thread d'être effectives. La librairie 
+.B mythread
+possède deux modes de fonctionnement: coopératif et préemptif. De plus elle possède un ordonnancement réglable avec ou sans priorités.
+Les fonctions de 
+.B mythread 
+sont détaillées dans les différentes pas de manuel listées ci-dessous.
+
+.SH VOIR AUSSI
+.BR "mythread_init" "(3)," "mythread_create" "(3)," "mythread_join" "(3)"
+.BR "mythread_exit" "(3)," "mythread_yield" "(3)," "mythread_self" "(3)"
+.BR "mythread_mutex_init" "(3)," "mythread_mutex_destroy" "(3)"
+.BR "mythread_mutex_lock" "(3)," "mythread_mutex_unlock" "(3)"
+.BR "mythread_cond_init", "(3)," "mythread_cond_destroy" "(3)"
+.BR "mythread_cond_wait", "(3)," "mythread_cond_signal", "(3)" "mythread_cond_broadcast", "(3)"

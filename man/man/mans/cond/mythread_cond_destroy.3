@@ -1,0 +1,33 @@
+.TH 
+.SH NOM
+mythread_cond_destroy \-\- Detruit une condition
+.SH SYNOPSYS
+#include <mythread.h>
+
+int
+mythread_cond_destroy (mythread_cond_t *cond)
+
+.SH DESCRIPTION
+La fonction 
+.B mythread_cond_destroy 
+libère toute la mémoire utilisée par le descripteur 
+.I cond
+.
+
+.SH VALEURS DE RETOUR
+Si tout se passe bien
+.B mythread_cond_destroy
+renvoie 0. Sinon la fonction renvoie le code d'erreur.
+
+.SH ERREURS
+.B mythread_cond_destroy
+va retourner les erreurs:
+.TP
+.B [EINVAL]
+.I la condition passée en argument n'est pas valide
+.TP
+.B [EBUSY]
+.I la condition à détruire est utilisée par un thread
+
+.SH VOIR AUSSI
+.BR "mythread_cond_init" "(3)" 
